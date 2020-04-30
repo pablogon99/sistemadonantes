@@ -7,8 +7,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controladorasangre">
    <children>
       <Label layoutX="84.0" layoutY="37.0" prefHeight="35.0" prefWidth="144.0" text="SISTEMA DE DONACION " />
-      <Button fx:id="btndonante" layoutX="111.0" layoutY="126.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="DONANTE" />
-      <Button fx:id="btndonacion" layoutX="111.0" layoutY="213.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="DONACION" />
-      <Button fx:id="btninformes" layoutX="111.0" layoutY="298.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="INFORMES" />
+      <Button fx:id="btndonante" layoutX="111.0" layoutY="126.0" mnemonicParsing="false" onAction="#iradonantes" prefHeight="35.0" prefWidth="90.0" text="DONANTE" />
+      <Button fx:id="btndonacion" layoutX="111.0" layoutY="213.0" mnemonicParsing="false" onAction="#iradonaciones" prefHeight="35.0" prefWidth="90.0" text="DONACION" />
+      <Button fx:id="btninformes" layoutX="111.0" layoutY="298.0" mnemonicParsing="false" onAction="#irainformes" prefHeight="35.0" prefWidth="90.0" text="INFORMES" />
    </children>
 </AnchorPane>

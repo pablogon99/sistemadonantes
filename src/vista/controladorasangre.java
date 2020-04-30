@@ -11,4 +11,19 @@ public class controladorasangre {
 	@FXML
 	private Button btninformes;
 	
+
+public void iradonantes() {
+	System.out.println("donantes");
+	
+}
+public void iradonaciones() {
+System.out.println("donaciones");
+
+}
+public void irainformes() {
+System.out.println("informes");
+
+}
+
+
 }
