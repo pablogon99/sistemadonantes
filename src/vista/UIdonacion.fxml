@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controladoradonaciones">
+   <children>
+      <Label layoutX="336.0" layoutY="14.0" text="DONACIONES" />
+      <TableView fx:id="tabla" layoutX="19.0" layoutY="223.0" prefHeight="214.0" prefWidth="703.0">
+        <columns>
+          <TableColumn fx:id="colNum_donacion" prefWidth="103.0" text="Num_donacion" />
+          <TableColumn fx:id="colFecha" prefWidth="85.0" text="Fecha" />
+            <TableColumn fx:id="colTipo_donacion" prefWidth="103.0" text="Tipo_donacion" />
+            <TableColumn fx:id="colPulso" prefWidth="84.0" text="Pulso" />
+            <TableColumn fx:id="colTa_sist" prefWidth="69.0" text="TA_SIST" />
+            <TableColumn fx:id="colTa_dias" prefWidth="87.0" text="TA_DIAS" />
+            <TableColumn fx:id="colHb_cap" prefWidth="82.0" text="HB_CAP" />
+            <TableColumn fx:id="colHb_ven" prefWidth="87.0" text="HB_VEN" />
+        </columns>
+      </TableView>
+      <TextField fx:id="Num_donaciontxt" layoutX="19.0" layoutY="91.0" />
+      <TextField fx:id="Fechatxt" layoutX="19.0" layoutY="136.0" />
+      <TextField fx:id="Tipo_donaciontxt" layoutX="19.0" layoutY="180.0" />
+      <TextField fx:id="Pulsotxt" layoutX="225.0" layoutY="91.0" />
+      <TextField fx:id="Ta_sisttxt" layoutX="225.0" layoutY="136.0" />
+      <TextField fx:id="Ta_diastxt" layoutX="225.0" layoutY="180.0" />
+      <TextField fx:id="Hb_captxt" layoutX="412.0" layoutY="91.0" />
+      <TextField fx:id="Hb_ventxt" layoutX="412.0" layoutY="136.0" />
+      <Button fx:id="btnVolverdonacion" layoutX="19.0" layoutY="10.0" mnemonicParsing="false" onAction="#Volvermenu" text="Volver" />
+      <Label layoutX="55.0" layoutY="74.0" text="Num_donacion" />
+      <Label layoutX="80.0" layoutY="116.0" text="Fecha" />
+      <Label layoutX="57.0" layoutY="161.0" text="Tipo_donacion" />
+      <Label layoutX="286.0" layoutY="74.0" text="Pulso" />
+      <Label layoutX="279.0" layoutY="116.0" text="TA_SIST" />
+      <Label layoutX="277.0" layoutY="161.0" text="TA_DIAS" />
+      <Label layoutX="465.0" layoutY="74.0" text="HB_CAP" />
+      <Label layoutX="465.0" layoutY="116.0" text="HB_VEN" />
+      <Button fx:id="btnGuardardonacion" layoutX="439.0" layoutY="187.0" mnemonicParsing="false" onAction="#GuardarDonacion" text="Guardar datos" />
+      <Button fx:id="btnBorrardonacion" layoutX="605.0" layoutY="187.0" mnemonicParsing="false" onAction="#BorrarDonacion" text="Borrar datos" />
+   </children>
+</AnchorPane>
