@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1694.0" prefWidth="840.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1704.0" prefWidth="908.0">
+         <children>
+            <ChoiceBox layoutX="709.0" layoutY="52.0" prefHeight="3.0" prefWidth="50.0" />
+            <Label layoutX="50.0" layoutY="56.0" text="Su edad esta comprendida entre los 18 y los 65 años?" />
+            <Label layoutX="50.0" layoutY="88.0" text="Se encuentra bien hoy?." />
+            <Label layoutX="50.0" layoutY="121.0" text="Pesa más de 50 Kg?" />
+            <Label layoutX="44.0" layoutY="149.0" text=" ¿Es la primera vez que dona sangre? " />
+            <Label layoutX="50.0" layoutY="179.0" text="¿Ha donado sangre o aféresis en los últimos 12 meses? ¿Cuántas veces? Fecha última" />
+            <Label layoutX="50.0" layoutY="212.0" text="¿ Ha sido rechazado alguna vez como donante?" />
+            <Label layoutX="50.0" layoutY="239.0" text="¿Convive en la actualidad o ha convivido en los últimos 4 meses con algún enfermo de SIDA o hepatitis?" />
+            <Label layoutX="50.0" layoutY="272.0" text="Ha compartido en los últimos 4 meses maquinillas de afeitar o cepillos de dientes, aunque sea con familiares o amigos?" />
+            <Label layoutX="50.0" layoutY="303.0" text="Se ha vacunado en el último mes o le han puesto inmunoglobulinas en los últimos 12 meses? " />
+            <Label layoutX="50.0" layoutY="339.0" text="Le han puesto la vacuna de la rabia en el último año?" />
+            <Label layoutX="50.0" layoutY="374.0" text="¿Se ha realizado algún tratamiento dental en los últimos 7 días?" />
+            <Label layoutX="50.0" layoutY="407.0" text="Toma alguna medicación incluida aspirina, ibuprofeno o derivados en los últimos cinco días? " />
+            <Label layoutX="50.0" layoutY="454.0" text="¿Ha tomado alguna vez: PROSCAR, PROPECIA, ROACUTAN, ISOTREX, TIGASON, NEOTIGASON, AVODART, DUAGEN?." />
+            <Label layoutX="50.0" layoutY="501.0" text="Ha tenido fiebre (&gt;38º C), diarrea, o alguna otra infección en los últimos quince días? ." />
+            <Label layoutX="50.0" layoutY="536.0" text="Ha sido hospitalizado, operado de algo o le han realizado una endoscopia" />
+            <Label layoutX="44.0" layoutY="553.0" text=" (gastroscopia, artroscopia, colonoscopia, rinoscopia) en los últimos cuatro meses?" />
+            <Label layoutX="50.0" layoutY="607.0" text="¿Ha sufrido alguna salpicadura con sangre o punción accidental con aguja en los últimos 4 meses?" />
+            <Label layoutX="50.0" layoutY="650.0" text="¿Se ha hecho algún tatuaje, piercing, agujero en oreja, acupuntura en los últimos 4 meses?" />
+            <Label layoutX="50.0" layoutY="689.0" text="Si es mujer ¿Ha estado embarazada en los últimos seis meses? ¿Está todavía amamantando al niño?, " />
+            <Label layoutX="50.0" layoutY="732.0" text="¿Ha tenido algún episodio alérgico importante en el último año ? ¿Sufre de asma" />
+            <Label layoutX="50.0" layoutY="777.0" text="¿Ha padecido alguna enfermedad infecciosa grave: hepatitis, tuberculosis, " />
+            <Label layoutX="50.0" layoutY="794.0" text="malta, toxoplasmosis, sífilis, gonorrea, babesiosis, paludismo o malaria, SIDA, fiebre reumática," />
+            <Label layoutX="48.0" layoutY="811.0" text="fiebre de  mononucleosis infecciosa, osteomielitis, fiebre Q, Kala-Azar, HTLV-I/II, enfermedad de Chagas? " />
+            <Label layoutX="50.0" layoutY="876.0" text="aparato digestivo, diabetes, cáncer, o problemas de coagulación?" />
+            <Label layoutX="50.0" layoutY="946.0" text="¿Le han transfundido sangre en alguna ocasión? ¿Cuando? ¿En qué país?" />
+            <Label layoutX="50.0" layoutY="984.0" text=" ¿Ha utilizado anabolizantes para aumentar la musculatura alguna vez en su vida?" />
+            <Label layoutX="50.0" layoutY="1027.0" text="Ha sido tratado con hormonas de crecimiento?, ¿tiene antecedentes de trasplante de cornea o injerto de duramadre" />
+            <Label layoutX="50.0" layoutY="1070.0" text=" ¿Ha residido en el Reino Unido más de un año acumulativo entre los años 1980 a 1996 inclusive? " />
+            <Label layoutX="50.0" layoutY="1111.0" text="¿Tiene antecedentes familiares de enfermedad de Creutzfeldt Jacob (enfermedad de las vacas locas)?" />
+            <Label layoutX="50.0" layoutY="1155.0" text="¿Ha nacido Vd.,su madre o su abuela materna fuera de la UE? ¿Dónde? ¿Cuándo regresó de su último viaje a su país de origen? " />
+            <Label layoutX="50.0" layoutY="1203.0" text="Ha viajado fuera de la UE en los últimos 6 meses? ¿Dónde?" />
+            <Label layoutX="50.0" layoutY="1254.0" text="Ha viajado fuera de la UE en los últimos 6 meses? ¿Dónde?" />
+            <Label layoutX="50.0" layoutY="1302.0" text="¿Va a realizar en las siguientes doce horas tras la donación alguna actividad laboral de riesgo? " />
+            <Label layoutX="48.0" layoutY="1319.0" text="(Usar maquinaria pesada, pilotar, subir a un andamio, grúas, bucear, conducir autobuses, camiones)" />
+            <Label layoutX="50.0" layoutY="1363.0" text="Ha entendido correctamente las preguntas formuladas en este cuestionario?" />
+            <Label layoutX="50.0" layoutY="859.0" text="¿Ha tenido alguna enfermedad grave de cerebro, riñón, tiroides, pulmón, corazón (infarto, angina, arritmia),  " />
+            <Label layoutX="50.0" layoutY="911.0" text="¿Ha tenido convulsiones no febriles, desmayos o epilepsia?" />
+            <Label layoutX="50.0" layoutY="1411.0" text="Padece o ha padecido alguna vez una enfermedad de transmisión sexual o transmisible por la sangre" />
+            <Label layoutX="50.0" layoutY="1456.0" text="Ha mantenido una relación sexual con una nueva pareja en los últimos 4 meses sin protección?" />
+            <Label layoutX="50.0" layoutY="1497.0" text="¿Ha consumido drogas ilegales alguna vez (heroína, cocaína, etc)?" />
+            <ChoiceBox layoutX="709.0" layoutY="82.0" prefHeight="26.0" prefWidth="50.0" />
+            <ChoiceBox layoutX="708.0" layoutY="113.0" prefHeight="24.0" prefWidth="52.0" />
+            <ChoiceBox layoutX="710.0" layoutY="145.0" prefHeight="25.0" prefWidth="52.0" />
+            <ChoiceBox layoutX="709.0" layoutY="176.0" prefHeight="24.0" prefWidth="53.0" />
+            <ChoiceBox layoutX="709.0" layoutY="205.0" prefHeight="28.0" prefWidth="52.0" />
+            <ChoiceBox layoutX="707.0" layoutY="235.0" prefHeight="27.0" prefWidth="54.0" />
+            <ChoiceBox layoutX="709.0" layoutY="267.0" prefHeight="27.0" prefWidth="53.0" />
+            <ChoiceBox layoutX="710.0" layoutY="298.0" prefHeight="26.0" prefWidth="55.0" />
+            <ChoiceBox layoutX="708.0" layoutY="335.0" prefHeight="25.0" prefWidth="60.0" />
+            <ChoiceBox layoutX="708.0" layoutY="367.0" prefHeight="28.0" prefWidth="60.0" />
+            <ChoiceBox layoutX="707.0" layoutY="400.0" prefHeight="28.0" prefWidth="64.0" />
+            <ChoiceBox layoutX="707.0" layoutY="445.0" prefHeight="30.0" prefWidth="66.0" />
+            <ChoiceBox layoutX="708.0" layoutY="493.0" prefHeight="29.0" prefWidth="66.0" />
+            <ChoiceBox layoutX="708.0" layoutY="541.0" prefHeight="25.0" prefWidth="74.0" />
+            <ChoiceBox layoutX="704.0" layoutY="600.0" prefHeight="28.0" prefWidth="81.0" />
+            <ChoiceBox layoutX="706.0" layoutY="645.0" prefHeight="26.0" prefWidth="79.0" />
+            <ChoiceBox layoutX="707.0" layoutY="683.0" prefHeight="27.0" prefWidth="75.0" />
+            <ChoiceBox layoutX="704.0" layoutY="728.0" prefHeight="25.0" prefWidth="78.0" />
+            <ChoiceBox layoutX="705.0" layoutY="790.0" prefHeight="25.0" prefWidth="77.0" />
+            <ChoiceBox layoutX="706.0" layoutY="852.0" prefHeight="28.0" prefWidth="76.0" />
+            <ChoiceBox layoutX="705.0" layoutY="906.0" prefHeight="26.0" prefWidth="80.0" />
+            <ChoiceBox layoutX="705.0" layoutY="943.0" prefHeight="24.0" prefWidth="80.0" />
+            <ChoiceBox layoutX="706.0" layoutY="979.0" prefHeight="26.0" prefWidth="76.0" />
+            <ChoiceBox layoutX="715.0" layoutY="1025.0" prefHeight="24.0" prefWidth="59.0" />
+            <ChoiceBox layoutX="715.0" layoutY="1065.0" prefHeight="26.0" prefWidth="69.0" />
+            <ChoiceBox layoutX="717.0" layoutY="1105.0" prefHeight="27.0" prefWidth="66.0" />
+            <ChoiceBox layoutX="738.0" layoutY="1147.0" prefHeight="29.0" prefWidth="77.0" />
+            <ChoiceBox layoutX="718.0" layoutY="1195.0" prefHeight="29.0" prefWidth="72.0" />
+            <ChoiceBox layoutX="716.0" layoutY="1246.0" prefHeight="29.0" prefWidth="76.0" />
+            <ChoiceBox layoutX="714.0" layoutY="1302.0" prefHeight="30.0" prefWidth="82.0" />
+            <ChoiceBox layoutX="717.0" layoutY="1353.0" prefHeight="31.0" prefWidth="84.0" />
+            <ChoiceBox layoutX="718.0" layoutY="1399.0" prefHeight="33.0" prefWidth="87.0" />
+            <ChoiceBox layoutX="715.0" layoutY="1449.0" prefHeight="28.0" prefWidth="90.0" />
+            <ChoiceBox layoutX="715.0" layoutY="1494.0" prefHeight="25.0" prefWidth="94.0" />
+            <Button layoutX="129.0" layoutY="1600.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="159.0" text="Guardar datos" />
+            <Button layoutX="474.0" layoutY="1601.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="158.0" text="Borrar datos" />
+            <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="Volver" />
+            <Label layoutX="329.0" layoutY="18.0" text="FORMULARIO" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
