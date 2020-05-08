@@ -6,11 +6,11 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1694.0" prefWidth="840.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1694.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controladorafomulario">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1704.0" prefWidth="908.0">
          <children>
-            <ChoiceBox layoutX="709.0" layoutY="52.0" prefHeight="3.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="cb1" layoutX="709.0" layoutY="52.0" prefHeight="3.0" prefWidth="50.0" />
             <Label layoutX="50.0" layoutY="56.0" text="Su edad esta comprendida entre los 18 y los 65 años?" />
             <Label layoutX="50.0" layoutY="88.0" text="Se encuentra bien hoy?." />
             <Label layoutX="50.0" layoutY="121.0" text="Pesa más de 50 Kg?" />
@@ -51,43 +51,43 @@
             <Label layoutX="50.0" layoutY="1411.0" text="Padece o ha padecido alguna vez una enfermedad de transmisión sexual o transmisible por la sangre" />
             <Label layoutX="50.0" layoutY="1456.0" text="Ha mantenido una relación sexual con una nueva pareja en los últimos 4 meses sin protección?" />
             <Label layoutX="50.0" layoutY="1497.0" text="¿Ha consumido drogas ilegales alguna vez (heroína, cocaína, etc)?" />
-            <ChoiceBox layoutX="709.0" layoutY="82.0" prefHeight="26.0" prefWidth="50.0" />
-            <ChoiceBox layoutX="708.0" layoutY="113.0" prefHeight="24.0" prefWidth="52.0" />
-            <ChoiceBox layoutX="710.0" layoutY="145.0" prefHeight="25.0" prefWidth="52.0" />
-            <ChoiceBox layoutX="709.0" layoutY="176.0" prefHeight="24.0" prefWidth="53.0" />
-            <ChoiceBox layoutX="709.0" layoutY="205.0" prefHeight="28.0" prefWidth="52.0" />
-            <ChoiceBox layoutX="707.0" layoutY="235.0" prefHeight="27.0" prefWidth="54.0" />
-            <ChoiceBox layoutX="709.0" layoutY="267.0" prefHeight="27.0" prefWidth="53.0" />
-            <ChoiceBox layoutX="710.0" layoutY="298.0" prefHeight="26.0" prefWidth="55.0" />
-            <ChoiceBox layoutX="708.0" layoutY="335.0" prefHeight="25.0" prefWidth="60.0" />
-            <ChoiceBox layoutX="708.0" layoutY="367.0" prefHeight="28.0" prefWidth="60.0" />
-            <ChoiceBox layoutX="707.0" layoutY="400.0" prefHeight="28.0" prefWidth="64.0" />
-            <ChoiceBox layoutX="707.0" layoutY="445.0" prefHeight="30.0" prefWidth="66.0" />
-            <ChoiceBox layoutX="708.0" layoutY="493.0" prefHeight="29.0" prefWidth="66.0" />
-            <ChoiceBox layoutX="708.0" layoutY="541.0" prefHeight="25.0" prefWidth="74.0" />
-            <ChoiceBox layoutX="704.0" layoutY="600.0" prefHeight="28.0" prefWidth="81.0" />
-            <ChoiceBox layoutX="706.0" layoutY="645.0" prefHeight="26.0" prefWidth="79.0" />
-            <ChoiceBox layoutX="707.0" layoutY="683.0" prefHeight="27.0" prefWidth="75.0" />
-            <ChoiceBox layoutX="704.0" layoutY="728.0" prefHeight="25.0" prefWidth="78.0" />
-            <ChoiceBox layoutX="705.0" layoutY="790.0" prefHeight="25.0" prefWidth="77.0" />
-            <ChoiceBox layoutX="706.0" layoutY="852.0" prefHeight="28.0" prefWidth="76.0" />
-            <ChoiceBox layoutX="705.0" layoutY="906.0" prefHeight="26.0" prefWidth="80.0" />
-            <ChoiceBox layoutX="705.0" layoutY="943.0" prefHeight="24.0" prefWidth="80.0" />
-            <ChoiceBox layoutX="706.0" layoutY="979.0" prefHeight="26.0" prefWidth="76.0" />
-            <ChoiceBox layoutX="715.0" layoutY="1025.0" prefHeight="24.0" prefWidth="59.0" />
-            <ChoiceBox layoutX="715.0" layoutY="1065.0" prefHeight="26.0" prefWidth="69.0" />
-            <ChoiceBox layoutX="717.0" layoutY="1105.0" prefHeight="27.0" prefWidth="66.0" />
-            <ChoiceBox layoutX="738.0" layoutY="1147.0" prefHeight="29.0" prefWidth="77.0" />
-            <ChoiceBox layoutX="718.0" layoutY="1195.0" prefHeight="29.0" prefWidth="72.0" />
-            <ChoiceBox layoutX="716.0" layoutY="1246.0" prefHeight="29.0" prefWidth="76.0" />
-            <ChoiceBox layoutX="714.0" layoutY="1302.0" prefHeight="30.0" prefWidth="82.0" />
-            <ChoiceBox layoutX="717.0" layoutY="1353.0" prefHeight="31.0" prefWidth="84.0" />
-            <ChoiceBox layoutX="718.0" layoutY="1399.0" prefHeight="33.0" prefWidth="87.0" />
-            <ChoiceBox layoutX="715.0" layoutY="1449.0" prefHeight="28.0" prefWidth="90.0" />
-            <ChoiceBox layoutX="715.0" layoutY="1494.0" prefHeight="25.0" prefWidth="94.0" />
-            <Button layoutX="129.0" layoutY="1600.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="159.0" text="Guardar datos" />
-            <Button layoutX="474.0" layoutY="1601.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="158.0" text="Borrar datos" />
-            <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="Volver" />
+            <ChoiceBox fx:id="cb2" layoutX="709.0" layoutY="82.0" prefHeight="26.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="cb3" layoutX="708.0" layoutY="113.0" prefHeight="24.0" prefWidth="52.0" />
+            <ChoiceBox fx:id="cb4" layoutX="710.0" layoutY="145.0" prefHeight="25.0" prefWidth="52.0" />
+            <ChoiceBox fx:id="cb5" layoutX="709.0" layoutY="176.0" prefHeight="24.0" prefWidth="53.0" />
+            <ChoiceBox fx:id="cb6" layoutX="709.0" layoutY="205.0" prefHeight="28.0" prefWidth="52.0" />
+            <ChoiceBox fx:id="cb7" layoutX="707.0" layoutY="235.0" prefHeight="27.0" prefWidth="54.0" />
+            <ChoiceBox fx:id="cb8" layoutX="709.0" layoutY="267.0" prefHeight="27.0" prefWidth="53.0" />
+            <ChoiceBox fx:id="cb9" layoutX="710.0" layoutY="298.0" prefHeight="26.0" prefWidth="55.0" />
+            <ChoiceBox fx:id="cb10" layoutX="708.0" layoutY="335.0" prefHeight="25.0" prefWidth="60.0" />
+            <ChoiceBox fx:id="cb11" layoutX="708.0" layoutY="367.0" prefHeight="28.0" prefWidth="60.0" />
+            <ChoiceBox fx:id="cb12" layoutX="707.0" layoutY="400.0" prefHeight="28.0" prefWidth="64.0" />
+            <ChoiceBox fx:id="cb13" layoutX="707.0" layoutY="445.0" prefHeight="30.0" prefWidth="66.0" />
+            <ChoiceBox fx:id="cb14" layoutX="708.0" layoutY="493.0" prefHeight="29.0" prefWidth="66.0" />
+            <ChoiceBox fx:id="cb15" layoutX="708.0" layoutY="541.0" prefHeight="25.0" prefWidth="74.0" />
+            <ChoiceBox fx:id="cb16" layoutX="704.0" layoutY="600.0" prefHeight="28.0" prefWidth="81.0" />
+            <ChoiceBox fx:id="cb17" layoutX="706.0" layoutY="645.0" prefHeight="26.0" prefWidth="79.0" />
+            <ChoiceBox fx:id="cb18" layoutX="707.0" layoutY="683.0" prefHeight="27.0" prefWidth="75.0" />
+            <ChoiceBox fx:id="cb19" layoutX="704.0" layoutY="728.0" prefHeight="25.0" prefWidth="78.0" />
+            <ChoiceBox fx:id="cb20" layoutX="705.0" layoutY="790.0" prefHeight="25.0" prefWidth="77.0" />
+            <ChoiceBox fx:id="cb21" layoutX="706.0" layoutY="852.0" prefHeight="28.0" prefWidth="76.0" />
+            <ChoiceBox fx:id="cb22" layoutX="705.0" layoutY="906.0" prefHeight="26.0" prefWidth="80.0" />
+            <ChoiceBox fx:id="cb23" layoutX="705.0" layoutY="943.0" prefHeight="24.0" prefWidth="80.0" />
+            <ChoiceBox fx:id="cb24" layoutX="706.0" layoutY="979.0" prefHeight="26.0" prefWidth="76.0" />
+            <ChoiceBox fx:id="cb25" layoutX="715.0" layoutY="1025.0" prefHeight="24.0" prefWidth="59.0" />
+            <ChoiceBox fx:id="cb26" layoutX="715.0" layoutY="1065.0" prefHeight="26.0" prefWidth="69.0" />
+            <ChoiceBox fx:id="cb27" layoutX="717.0" layoutY="1105.0" prefHeight="27.0" prefWidth="66.0" />
+            <ChoiceBox fx:id="cb28" layoutX="738.0" layoutY="1147.0" prefHeight="29.0" prefWidth="77.0" />
+            <ChoiceBox fx:id="cb29" layoutX="718.0" layoutY="1195.0" prefHeight="29.0" prefWidth="72.0" />
+            <ChoiceBox fx:id="cb30" layoutX="716.0" layoutY="1246.0" prefHeight="29.0" prefWidth="76.0" />
+            <ChoiceBox fx:id="cb31" layoutX="714.0" layoutY="1302.0" prefHeight="30.0" prefWidth="82.0" />
+            <ChoiceBox fx:id="cb32" layoutX="717.0" layoutY="1353.0" prefHeight="31.0" prefWidth="84.0" />
+            <ChoiceBox fx:id="cb33" layoutX="718.0" layoutY="1399.0" prefHeight="33.0" prefWidth="87.0" />
+            <ChoiceBox fx:id="cb34" layoutX="715.0" layoutY="1449.0" prefHeight="28.0" prefWidth="90.0" />
+            <ChoiceBox fx:id="cb35" layoutX="715.0" layoutY="1494.0" prefHeight="25.0" prefWidth="94.0" />
+            <Button fx:id="GuardarCambios" layoutX="129.0" layoutY="1600.0" mnemonicParsing="false" onAction="#Guardardatos" prefHeight="33.0" prefWidth="159.0" text="Guardar datos" />
+            <Button fx:id="BorrarCambios" layoutX="474.0" layoutY="1601.0" mnemonicParsing="false" onAction="#Borrardatos" prefHeight="32.0" prefWidth="158.0" text="Borrar datos" />
+            <Button fx:id="Volver" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
             <Label layoutX="329.0" layoutY="18.0" text="FORMULARIO" />
          </children></AnchorPane>
   </content>

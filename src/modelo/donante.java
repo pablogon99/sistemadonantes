@@ -17,6 +17,36 @@ public class donante {
 	private String SEXO;
 	private String GRUPO_SANGUINEO;
 	private String CICLO;
+	
+	
+	
+	
+	public donante(int n_DONANTE, String iDENTIFICACION, String nOMBRE, String aPELLIDO1, String aPELLIDO2,
+			String eMAIL, String eSTADO, int tELEFONO, int cOD_POSTAL, String sEXO, String gRUPO_SANGUINEO,
+			String cICLO) {
+		super();
+		N_DONANTE = n_DONANTE;
+		IDENTIFICACION = iDENTIFICACION;
+		NOMBRE = nOMBRE;
+		APELLIDO1 = aPELLIDO1;
+		APELLIDO2 = aPELLIDO2;
+		EMAIL = eMAIL;
+		ESTADO = eSTADO;
+		TELEFONO = tELEFONO;
+		COD_POSTAL = cOD_POSTAL;
+		SEXO = sEXO;
+		GRUPO_SANGUINEO = gRUPO_SANGUINEO;
+		CICLO = cICLO;
+	}
+	
+	public File getFOTO() {
+		return FOTO;
+	}
+
+	public void setFOTO(File fOTO) {
+		FOTO = fOTO;
+	}
+
 	public donante(int n_DONANTE, String iDENTIFICACION, String nOMBRE, String aPELLIDO1, String aPELLIDO2,
 			String eMAIL, String eSTADO, int tELEFONO, int cOD_POSTAL, File fOTO, String sEXO, String gRUPO_SANGUINEO,
 			String cICLO) {
@@ -35,6 +65,7 @@ public class donante {
 		GRUPO_SANGUINEO = gRUPO_SANGUINEO;
 		CICLO = cICLO;
 	}
+
 	public int getN_DONANTE() {
 		return N_DONANTE;
 	}
@@ -89,12 +120,7 @@ public class donante {
 	public void setCOD_POSTAL(int cOD_POSTAL) {
 		COD_POSTAL = cOD_POSTAL;
 	}
-	public File getFOTO() {
-		return FOTO;
-	}
-	public void setFOTO(File fOTO) {
-		FOTO = fOTO;
-	}
+	
 	public String getSEXO() {
 		return SEXO;
 	}

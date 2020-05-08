@@ -1,11 +1,19 @@
 package vista;
 
 
+import java.sql.SQLException;
+
+import controlador.Mainsangre;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import modelo.Testconexion;
 import modelo.donante;
 
 public class controladoradonantes {
@@ -77,8 +85,46 @@ public class controladoradonantes {
 	@FXML
 	private TableColumn<donante,String> colCiclo;
 	
+	Testconexion con;
+	private ObservableList<donante> datos1 = FXCollections.observableArrayList();
+	
+	private Stage ventana;
+	private Mainsangre mnprincipal;
+
 	
 	
+	
+	public void setmnprincipal(Mainsangre mnprincipal) {
+		this.mnprincipal=mnprincipal;
+	}
+	public void setStagePrincipal(Stage ventana) {
+		// TODO Auto-generated method stub
+		this.ventana = ventana;
+	}
+
+	public void closeWindow(){
+		this.ventana.close();
+	}
+
+	public void initialize() throws SQLException{
+		
+		con = new Testconexion();
+		datos1=con.MostrarTablaDonante();
+		tabla.setItems(this.datos1);
+		
+		colN_donante.setCellValueFactory(new PropertyValueFactory<donante,Integer>("N_donante"));
+		colIdentificacion.setCellValueFactory(new PropertyValueFactory<donante,String>("Identificacion"));
+		colNombre.setCellValueFactory(new PropertyValueFactory<donante,String>("Nombre"));
+		colApellido1.setCellValueFactory(new PropertyValueFactory<donante,String>("Apellido1"));
+		colApellido2.setCellValueFactory(new PropertyValueFactory<donante,String>("Apellido2"));
+		colEmail.setCellValueFactory(new PropertyValueFactory<donante,String>("Email"));
+		colEstado.setCellValueFactory(new PropertyValueFactory<donante,String>("Estado"));
+		colTelefono.setCellValueFactory(new PropertyValueFactory<donante,Integer>("Telefono"));
+		colCod_postal.setCellValueFactory(new PropertyValueFactory<donante,Integer>("Cod_postal"));
+		colSexo.setCellValueFactory(new PropertyValueFactory<donante,String>("Sexo"));
+		colGrupo_sanguineo.setCellValueFactory(new PropertyValueFactory<donante,String>("Grupo_sanguineo"));
+		colCiclo.setCellValueFactory(new PropertyValueFactory<donante,String>("Ciclo"));
+	}
 	
 	public void GuardarDonante() {
 		

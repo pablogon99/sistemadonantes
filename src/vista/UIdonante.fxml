@@ -27,7 +27,7 @@
             <TableColumn fx:id="colCiclo" prefWidth="142.0" text="Ciclo" />
         </columns>
       </TableView>
-      <Button fx:id="btnVolverdonantes" layoutX="16.0" layoutY="10.0" mnemonicParsing="false" onAction="#Volvermenu" text="Volver" />
+      <Button fx:id="btnVolverdonantes" layoutX="16.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" text="Volver" />
       <TextField fx:id="N_donantetxt" layoutX="16.0" layoutY="65.0" prefHeight="25.0" prefWidth="118.0" />
       <TextField fx:id="Identificaciontxt" layoutX="16.0" layoutY="112.0" prefHeight="25.0" prefWidth="118.0" />
       <TextField fx:id="Nombretxt" layoutX="16.0" layoutY="165.0" prefHeight="25.0" prefWidth="118.0" />
