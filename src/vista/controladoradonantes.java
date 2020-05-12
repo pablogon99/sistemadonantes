@@ -116,18 +116,18 @@ public class controladoradonantes {
 		datos1=con.MostrarTablaDonante();
 		tabla.setItems(this.datos1);
 		
-		colN_donante.setCellValueFactory(new PropertyValueFactory<donante,Integer>("N_donante"));
-		colIdentificacion.setCellValueFactory(new PropertyValueFactory<donante,String>("Identificacion"));
-		colNombre.setCellValueFactory(new PropertyValueFactory<donante,String>("Nombre"));
-		colApellido1.setCellValueFactory(new PropertyValueFactory<donante,String>("Apellido1"));
-		colApellido2.setCellValueFactory(new PropertyValueFactory<donante,String>("Apellido2"));
-		colEmail.setCellValueFactory(new PropertyValueFactory<donante,String>("Email"));
-		colEstado.setCellValueFactory(new PropertyValueFactory<donante,String>("Estado"));
-		colTelefono.setCellValueFactory(new PropertyValueFactory<donante,Integer>("Telefono"));
-		colCod_postal.setCellValueFactory(new PropertyValueFactory<donante,Integer>("Cod_postal"));
-		colSexo.setCellValueFactory(new PropertyValueFactory<donante,String>("Sexo"));
-		colGrupo_sanguineo.setCellValueFactory(new PropertyValueFactory<donante,String>("Grupo_sanguineo"));
-		colCiclo.setCellValueFactory(new PropertyValueFactory<donante,String>("Ciclo"));
+		colN_donante.setCellValueFactory(new PropertyValueFactory<donante,Integer>("N_DONANTE"));
+		colIdentificacion.setCellValueFactory(new PropertyValueFactory<donante,String>("IDENTIFICACION"));
+		colNombre.setCellValueFactory(new PropertyValueFactory<donante,String>("NOMBRE"));
+		colApellido1.setCellValueFactory(new PropertyValueFactory<donante,String>("APELLIDO1"));
+		colApellido2.setCellValueFactory(new PropertyValueFactory<donante,String>("APELLIDO2"));
+		colEmail.setCellValueFactory(new PropertyValueFactory<donante,String>("EMAIL"));
+		colEstado.setCellValueFactory(new PropertyValueFactory<donante,String>("ESTADO"));
+		colTelefono.setCellValueFactory(new PropertyValueFactory<donante,Integer>("TELEFONO"));
+		colCod_postal.setCellValueFactory(new PropertyValueFactory<donante,Integer>("COD_POSTAL"));
+		colSexo.setCellValueFactory(new PropertyValueFactory<donante,String>("SEXO"));
+		colGrupo_sanguineo.setCellValueFactory(new PropertyValueFactory<donante,String>("GRUPO_SANGUINEO"));
+		colCiclo.setCellValueFactory(new PropertyValueFactory<donante,String>("CICLO"));
 	}
 	
 	public void GuardarDonante() throws SQLException {
@@ -140,7 +140,7 @@ public class controladoradonantes {
 		}else{
 
 			donante nuevoDonante = new donante(	Integer.parseInt(N_donantetxt.getText()) ,Identificaciontxt.getText(),Nombretxt.getText(),Apellido1txt.getText(),Apellido2txt.getText(),Emailtxt.getText(),Estadotxt.getText(),	Integer.parseInt(Telefonotxt.getText()),Integer.parseInt(Cod_postaltxt.getText()),Sexotxt.getText(),Grupo_sanguineotxt.getText(),Ciclotxt.getText());
-			datos2.add(nuevoDonante);
+			datos1.add(nuevoDonante);
 			
 			if(edicion == true){
 				donante editada  = datos1.get(indiceEdicion);
@@ -158,14 +158,32 @@ public class controladoradonantes {
 				editada.setCICLO(Ciclotxt.getText());
 				
 				datos1.set(indiceEdicion, editada);
-				con.ActualizarDatos(datos2.get(0), editada);//hacer el metodo actualizar
+				con.ActualizarDatos(datos1.get(0), editada);
+				datos1=con.MostrarTablaDonante();
+				tabla.setItems(datos1);
 				
+			if (edicion== false) {
 				Alert alerta = new Alert ( AlertType.INFORMATION ); 
-			   	alerta . setTitle ( "Información" ); 
+			   	alerta . setTitle ( "Información ERROR" ); 
 			   	alerta . setHeaderText (null); 
-			   	alerta . setContentText ("¡Campo Actualizado!");  
+			   	alerta . setContentText ("NO SE GUARDA EL DONANTE");  
 			   	alerta . showAndWait();
+			}else {
+				Alert alerta = new Alert ( AlertType.INFORMATION ); 
+			   	alerta . setTitle ( "Información " ); 
+			   	alerta . setHeaderText (null); 
+			   	alerta . setContentText ("DONANTE EDITADO");  
+			   	alerta . showAndWait();
+			}	
+				
 	
+			}else {
+				con.GuardarDonantes(Integer.parseInt(N_donantetxt.getText()) ,Identificaciontxt.getText(),Nombretxt.getText(),Apellido1txt.getText(),Apellido2txt.getText(),Emailtxt.getText(),Estadotxt.getText(),	Integer.parseInt(Telefonotxt.getText()),Integer.parseInt(Cod_postaltxt.getText()),Sexotxt.getText(),Grupo_sanguineotxt.getText(),Ciclotxt.getText());
+				Alert alerta = new Alert ( AlertType.INFORMATION ); 
+			   	alerta . setTitle ( "Información " ); 
+			   	alerta . setHeaderText (null); 
+			   	alerta . setContentText ("¡donante guardado!");  
+			   	alerta . showAndWait();
 			}
 		}
 		
@@ -190,11 +208,39 @@ public class controladoradonantes {
 	}
 	public void EditararDonante() {
 	
-	}
-	public void IraFormulario() {
 		
+		
+		int index = tabla.getSelectionModel().getSelectedIndex();
+
+		
+		if( index >= 0){
+
+			
+			edicion = true;
+			indiceEdicion = index;
+
+
+			donante seleccionada = tabla.getSelectionModel().getSelectedItem();
+
+			int N_donante=seleccionada.getN_DONANTE();
+			int Telefono=seleccionada.getTELEFONO();
+			int Cod_postal=seleccionada.getCOD_POSTAL();
+			
+			N_donantetxt.setText(""+N_donante+"");
+			Identificaciontxt.setText(seleccionada.getIDENTIFICACION());
+			Nombretxt.setText(seleccionada.getNOMBRE());
+			Apellido1txt.setText(seleccionada.getAPELLIDO1());
+			Apellido2txt.setText(seleccionada.getAPELLIDO2());
+			Emailtxt.setText(seleccionada.getEMAIL());
+			Estadotxt.setText(seleccionada.getESTADO());
+			Telefonotxt.setText(""+Telefono+"");
+			Cod_postaltxt.setText(""+Cod_postal+"");
+			Sexotxt.setText(seleccionada.getSEXO());
+			Grupo_sanguineotxt.setText(seleccionada.getGRUPO_SANGUINEO());
+			Ciclotxt.setText(seleccionada.getCICLO());
 	}
 	
+	}
 }
 
 

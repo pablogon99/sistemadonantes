@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controladoradonantes">
    <children>
       <Label layoutX="264.0" layoutY="14.0" text="ADMINISTRACION DE DONANTES" />
-      <TableView fx:id="tabla" layoutX="14.0" layoutY="268.0" onSort="#initialize" prefHeight="211.0" prefWidth="751.0">
+      <TableView fx:id="tabla" layoutX="14.0" layoutY="268.0" prefHeight="211.0" prefWidth="751.0">
         <columns>
           <TableColumn fx:id="colN_donante" prefWidth="75.0" text="N_donante" />
           <TableColumn fx:id="colIdentificacion" prefWidth="75.0" text="Identificacion" />

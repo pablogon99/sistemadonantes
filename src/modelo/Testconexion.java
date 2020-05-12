@@ -117,20 +117,20 @@ public void GuardarDonantes( int N_donante, String Identificacion, String Nombre
 	Statement stm = conexion.createStatement();
 	
 	
-	String insertsql = "INSERT INTO "+user+".DONANTE VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	String insertsql = "INSERT INTO "+user+".DONANTE (N_DONANTE,IDENTIFICACION,NOMBRE,APELLIDO1,APELLIDO2,EMAIL,ESTADO,TELEFONO,COD_POSTAL,SEXO,GRUPO_SANGUINEO,CICLO ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 	PreparedStatement pstmt = conexion.prepareStatement(insertsql);
-	pstmt.setString(1, Integer.toString(N_donante));
+	pstmt.setInt(1, N_donante);
 	pstmt.setString(2, Identificacion);
 	pstmt.setString(3, Nombre);
 	pstmt.setString(4, Apellido1);
 	pstmt.setString(5, Apellido2);
 	pstmt.setString(6, Email);
 	pstmt.setString(7, Estado);
-	pstmt.setString(8, Integer.toString(Telefono));
-	pstmt.setString(9, Integer.toString(Cod_postal));
-	pstmt.setString(7, Sexo);
-	pstmt.setString(7, Grupo_sanguineo);
-	pstmt.setString(7, Ciclo);
+	pstmt.setInt(8, Telefono);
+	pstmt.setInt(9,Cod_postal);
+	pstmt.setString(10, Sexo);
+	pstmt.setString(11, Grupo_sanguineo);
+	pstmt.setString(12, Ciclo);
 	
 	try {
 		int resultado = pstmt.executeUpdate();
@@ -160,7 +160,7 @@ public void ActualizarDatos(donante donante1,donante donante2) throws SQLExcepti
 		
 		
 		
-String updatesql = "UPDATE "+user+".DONANTE SET N_DONANTE= ?, IDENTIFICACION =?, NOMBRE =?, APELLIDO1 =?, APELLIDO2 =?, EMAIL =?, ESTADO =?, TELEFONO =?, COD_POSTAL =?, FOTO =?, SEXO =?, GRUPO_SANGUINEO =?, CICLO =? WHERE N_DONANTE=?";
+String updatesql = "UPDATE "+user+".DONANTE SET N_DONANTE= ?, IDENTIFICACION =?, NOMBRE =?, APELLIDO1 =?, APELLIDO2 =?, EMAIL =?, ESTADO =?, TELEFONO =?, COD_POSTAL =?, SEXO =?, GRUPO_SANGUINEO =?, CICLO =? WHERE N_DONANTE=?";
 		PreparedStatement pstmt = conexion.prepareStatement(updatesql);
 		pstmt.setString(1, Integer.toString(donante2.getN_DONANTE()));
 		pstmt.setString(2, donante2.getIDENTIFICACION());
@@ -171,7 +171,6 @@ String updatesql = "UPDATE "+user+".DONANTE SET N_DONANTE= ?, IDENTIFICACION =?,
 		pstmt.setString(7, donante2.getESTADO());
 		pstmt.setString(8, Integer.toString(donante2.getTELEFONO()));
 		pstmt.setString(9, Integer.toString(donante2.getCOD_POSTAL()));
-		pstmt.setString(10, donante2.getSEXO());
 		pstmt.setString(10, donante2.getSEXO());
 		pstmt.setString(11, donante2.getGRUPO_SANGUINEO());
 		pstmt.setString(12, donante2.getCICLO());
