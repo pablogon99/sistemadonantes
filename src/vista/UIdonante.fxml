@@ -52,9 +52,10 @@
       <Label layoutX="374.0" layoutY="95.0" text="Sexo" />
       <Label layoutX="342.0" layoutY="148.0" text="Grupo_sanguineo" />
       <Label layoutX="374.0" layoutY="190.0" text="Ciclo" />
-      <Button fx:id="btnGuardardonante" layoutX="672.0" layoutY="125.0" mnemonicParsing="false" onAction="#GuardarDonante" text="Guardar" />
-      <Button fx:id="btnBorrardonante" layoutX="671.0" layoutY="165.0" mnemonicParsing="false" onAction="#BorrarDonante" text="Borrar" />
-      <Button fx:id="btnEditardonante" layoutX="672.0" layoutY="209.0" mnemonicParsing="false" onAction="#EditararDonante" text="Editar" />
+      <Button fx:id="btnGuardardonante" layoutX="642.0" layoutY="112.0" mnemonicParsing="false" onAction="#GuardarDonante" text="Guardar Donante" />
+      <Button fx:id="btnBorrardonante" layoutX="642.0" layoutY="178.0" mnemonicParsing="false" onAction="#BorrarDatos" text="Borrar Datos" />
+      <Button fx:id="btnEditardonante" layoutX="642.0" layoutY="209.0" mnemonicParsing="false" onAction="#EditararDonante" text="Editar Donante" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="459.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnElminardonantes" layoutX="642.0" layoutY="144.0" mnemonicParsing="false" onAction="#EliminarDonante" text="Eliminar Donante" />
    </children>
 </AnchorPane>

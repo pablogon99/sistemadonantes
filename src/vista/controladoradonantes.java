@@ -2,14 +2,17 @@ package vista;
 
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 
 import controlador.Mainsangre;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -23,13 +26,14 @@ public class controladoradonantes {
 	@FXML
 	private Button btnVolverdonantes;
 	@FXML
+	private Button btnElminardonantes;
+	@FXML
 	private Button btnGuardardonante;
 	@FXML
 	private Button btnBorrardonante;
 	@FXML
 	private Button btnEditardonante;
-	@FXML
-	private Button btniraformulario;
+	
 	@FXML
 	private TextField N_donantetxt;
 	@FXML
@@ -188,7 +192,7 @@ public class controladoradonantes {
 		}
 		
 	}
-	public void BorrarDonante() {
+	public void BorrarDatos() {
 		N_donantetxt.setText("");
 		Identificaciontxt.setText("");
 		Nombretxt.setText("");
@@ -240,6 +244,42 @@ public class controladoradonantes {
 			Ciclotxt.setText(seleccionada.getCICLO());
 	}
 	
+	}
+	public void EliminarDonante(ActionEvent event) throws SQLException {
+		int index = tabla.getSelectionModel().getSelectedIndex();
+
+		if(index>=0){
+			
+			donante seleccionada = tabla.getSelectionModel().getSelectedItem();
+
+					Alert alert = new Alert(AlertType.CONFIRMATION);
+			       alert.setTitle("Borrando...");
+			       alert.setHeaderText("Desea Borrar a " + seleccionada.getNOMBRE() +" "+ seleccionada.getAPELLIDO1());
+			      
+			       Optional <ButtonType> result = alert.showAndWait ();
+			       
+			      if (result.get () == ButtonType.OK){
+			    	  
+			    	  	con.Borrardonante(seleccionada.getN_DONANTE());
+			    	   	datos1.remove(seleccionada);
+						
+			    	   	Alert alerta = new Alert ( AlertType.INFORMATION ); 
+			    	   	alerta . setTitle ( "Información" ); 
+			    	   	alerta . setHeaderText (null); 
+			    	   	alerta . setContentText ( "¡Eliminado!" );  
+			    	   	alerta . showAndWait (); 	
+			       }
+		}else{
+			
+				Alert alert = new Alert(AlertType.ERROR);
+		       alert.setTitle("Error !");
+		       alert.setHeaderText("Seleccione una fila...");
+		       alert.showAndWait();
+		}
+		
+		
+		
+		
 	}
 }
 

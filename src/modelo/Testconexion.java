@@ -194,6 +194,34 @@ String updatesql = "UPDATE "+user+".DONANTE SET N_DONANTE= ?, IDENTIFICACION =?,
 	}
 	
 	}
+public void Borrardonante( int index ) throws SQLException{
+	Statement stm = conexion.createStatement();
 
+	
+	
+
+	String deletesql = "DELETE FROM "+user+".DONANTE WHERE N_DONANTE = ?" ;
+	PreparedStatement pstmt = conexion.prepareStatement(deletesql);
+	pstmt.setInt(1, index);
+	
+	try {
+		int resultado = pstmt.executeUpdate();
+
+		if(resultado != 1) {
+			System.out.println("Error en eliminar  " + resultado);
+		}
+}catch (SQLException sqle ) {
+	// TODO: handle exception
+	
+	int pos = sqle.getMessage().indexOf(":");
+	String codeErrorSQL = sqle.getMessage().substring(0,pos);
+
+	if(codeErrorSQL.equals("ORA-00955") )
+		System.out.println("LA TABLA ESTA CREADA ");
+	else
+		System.out.println("Ha habido algún problema con  Oracle al hacer el borrado de datos");
+}
+}
 
 }
+
