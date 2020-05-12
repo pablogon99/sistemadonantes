@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -108,6 +109,91 @@ public  ObservableList<donante> MostrarTablaDonante()throws SQLException{
 			System.out.println(codeErrorSQL);
 		}
 		return listadonantes;
+	}
+
+public void GuardarDonantes( int N_donante, String Identificacion, String Nombre, String Apellido1, String Apellido2,
+		String Email, String Estado, int Telefono, int Cod_postal, String Sexo, String Grupo_sanguineo,
+		String Ciclo) throws SQLException{
+	Statement stm = conexion.createStatement();
+	
+	
+	String insertsql = "INSERT INTO "+user+".DONANTE VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	PreparedStatement pstmt = conexion.prepareStatement(insertsql);
+	pstmt.setString(1, Integer.toString(N_donante));
+	pstmt.setString(2, Identificacion);
+	pstmt.setString(3, Nombre);
+	pstmt.setString(4, Apellido1);
+	pstmt.setString(5, Apellido2);
+	pstmt.setString(6, Email);
+	pstmt.setString(7, Estado);
+	pstmt.setString(8, Integer.toString(Telefono));
+	pstmt.setString(9, Integer.toString(Cod_postal));
+	pstmt.setString(7, Sexo);
+	pstmt.setString(7, Grupo_sanguineo);
+	pstmt.setString(7, Ciclo);
+	
+	try {
+		int resultado = pstmt.executeUpdate();
+
+		if(resultado != 1) {
+			System.out.println("Error en la inserción " + resultado);
+		}
+
+	
+	} catch (SQLException sqle ) {
+		
+	
+		int pos = sqle.getMessage().indexOf(":");
+		String codeErrorSQL = sqle.getMessage().substring(0,pos);
+
+		if(codeErrorSQL.equals("ORA-00955") )
+			System.out.println("LA TABLA ESTA CREADA ");
+		else
+			System.out.println("Ha habido algún problema con  Oracle al hacer la insercion de datos");
+	}
+	
+	
+}
+public void ActualizarDatos(donante donante1,donante donante2) throws SQLException {
+		Statement stm = conexion.createStatement();
+		
+		
+		
+		
+String updatesql = "UPDATE "+user+".DONANTE SET N_DONANTE= ?, IDENTIFICACION =?, NOMBRE =?, APELLIDO1 =?, APELLIDO2 =?, EMAIL =?, ESTADO =?, TELEFONO =?, COD_POSTAL =?, FOTO =?, SEXO =?, GRUPO_SANGUINEO =?, CICLO =? WHERE N_DONANTE=?";
+		PreparedStatement pstmt = conexion.prepareStatement(updatesql);
+		pstmt.setString(1, Integer.toString(donante2.getN_DONANTE()));
+		pstmt.setString(2, donante2.getIDENTIFICACION());
+		pstmt.setString(3, donante2.getNOMBRE());
+		pstmt.setString(4, donante2.getAPELLIDO1());
+		pstmt.setString(5, donante2.getAPELLIDO2());
+		pstmt.setString(6, donante2.getEMAIL());
+		pstmt.setString(7, donante2.getESTADO());
+		pstmt.setString(8, Integer.toString(donante2.getTELEFONO()));
+		pstmt.setString(9, Integer.toString(donante2.getCOD_POSTAL()));
+		pstmt.setString(10, donante2.getSEXO());
+		pstmt.setString(10, donante2.getSEXO());
+		pstmt.setString(11, donante2.getGRUPO_SANGUINEO());
+		pstmt.setString(12, donante2.getCICLO());
+		pstmt.setString(13,Integer.toString(donante1.getN_DONANTE()));	
+		try {
+			int resultado = pstmt.executeUpdate();
+
+			if(resultado != 1) 
+				System.out.println("Error en actualizar  " + resultado);
+			
+	}catch (SQLException sqle ) {
+		System.out.println(sqle);
+		
+		int pos = sqle.getMessage().indexOf(":");
+		String codeErrorSQL = sqle.getMessage().substring(0,pos);
+
+		if(codeErrorSQL.equals("ORA-00955") )
+			System.out.println("LA TABLA ESTA CREADA ");
+		else
+			System.out.println("Ha habido algún problema con  Oracle al hacer la modificacion");
+	}
+	
 	}
 
 

@@ -3,14 +3,17 @@ package vista;
 
 import java.sql.SQLException;
 
+
 import controlador.Mainsangre;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import modelo.Testconexion;
@@ -87,12 +90,13 @@ public class controladoradonantes {
 	
 	Testconexion con;
 	private ObservableList<donante> datos1 = FXCollections.observableArrayList();
-	
+	private ObservableList<donante> datos2 = FXCollections.observableArrayList();
 	private Stage ventana;
 	private Mainsangre mnprincipal;
 
 	
-	
+	 private boolean edicion=false;
+	   private int indiceEdicion=0;
 	
 	public void setmnprincipal(Mainsangre mnprincipal) {
 		this.mnprincipal=mnprincipal;
@@ -126,21 +130,71 @@ public class controladoradonantes {
 		colCiclo.setCellValueFactory(new PropertyValueFactory<donante,String>("Ciclo"));
 	}
 	
-	public void GuardarDonante() {
+	public void GuardarDonante() throws SQLException {
+		if(N_donantetxt.getText().equals("") || Nombretxt.getText().equals("") || Identificaciontxt.getText().equals("")|| Apellido1txt.getText().equals("")|| Apellido2txt.getText().equals("")|| Emailtxt.getText().equals("")|| Ciclotxt.getText().equals("")|| Grupo_sanguineotxt.getText().equals("")|| Estadotxt.getText().equals("")|| Telefonotxt.getText().equals("")|| Cod_postaltxt.getText().equals("")){
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!!!");
+			alert.setHeaderText("Comprueba que has introducido todos los datos");
+			alert.setContentText("¡Tienen que estar todos los campos para guardarlos!");
+			alert.showAndWait();
+		}else{
+
+			donante nuevoDonante = new donante(	Integer.parseInt(N_donantetxt.getText()) ,Identificaciontxt.getText(),Nombretxt.getText(),Apellido1txt.getText(),Apellido2txt.getText(),Emailtxt.getText(),Estadotxt.getText(),	Integer.parseInt(Telefonotxt.getText()),Integer.parseInt(Cod_postaltxt.getText()),Sexotxt.getText(),Grupo_sanguineotxt.getText(),Ciclotxt.getText());
+			datos2.add(nuevoDonante);
+			
+			if(edicion == true){
+				donante editada  = datos1.get(indiceEdicion);
+				editada.setN_DONANTE(Integer.parseInt(N_donantetxt.getText()));
+				editada.setIDENTIFICACION(Identificaciontxt.getText());
+				editada.setNOMBRE(Nombretxt.getText());;
+				editada.setAPELLIDO1(Apellido1txt.getText());
+				editada.setAPELLIDO2(Apellido2txt.getText());
+				editada.setEMAIL(Emailtxt.getText());
+				editada.setESTADO(Estadotxt.getText());
+				editada.setTELEFONO(Integer.parseInt(Telefonotxt.getText()));
+				editada.setCOD_POSTAL(Integer.parseInt(Cod_postaltxt.getText()));
+				editada.setSEXO(Sexotxt.getText());
+				editada.setGRUPO_SANGUINEO(Grupo_sanguineotxt.getText());
+				editada.setCICLO(Ciclotxt.getText());
+				
+				datos1.set(indiceEdicion, editada);
+				con.ActualizarDatos(datos2.get(0), editada);//hacer el metodo actualizar
+				
+				Alert alerta = new Alert ( AlertType.INFORMATION ); 
+			   	alerta . setTitle ( "Información" ); 
+			   	alerta . setHeaderText (null); 
+			   	alerta . setContentText ("¡Campo Actualizado!");  
+			   	alerta . showAndWait();
+	
+			}
+		}
 		
 	}
 	public void BorrarDonante() {
+		N_donantetxt.setText("");
+		Identificaciontxt.setText("");
+		Nombretxt.setText("");
+		Apellido1txt.setText("");
+		Apellido2txt.setText("");
+		Emailtxt.setText("");
+		Estadotxt.setText("");
+		Telefonotxt.setText("");
+		Cod_postaltxt.setText("");
+		Sexotxt.setText("");
+		Grupo_sanguineotxt.setText("");
+		Ciclotxt.setText("");
 		
+
+		edicion = false;
+		indiceEdicion = 0;
 	}
 	public void EditararDonante() {
 	
-}
+	}
 	public void IraFormulario() {
 		
 	}
-	public void Volvermenu() {
-		
-	}
+	
 }
 
 

@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controladoradonantes">
    <children>
       <Label layoutX="264.0" layoutY="14.0" text="ADMINISTRACION DE DONANTES" />
-      <TableView fx:id="tabla" layoutX="14.0" layoutY="268.0" prefHeight="211.0" prefWidth="751.0">
+      <TableView fx:id="tabla" layoutX="14.0" layoutY="268.0" onSort="#initialize" prefHeight="211.0" prefWidth="751.0">
         <columns>
           <TableColumn fx:id="colN_donante" prefWidth="75.0" text="N_donante" />
           <TableColumn fx:id="colIdentificacion" prefWidth="75.0" text="Identificacion" />
@@ -56,6 +56,5 @@
       <Button fx:id="btnBorrardonante" layoutX="671.0" layoutY="165.0" mnemonicParsing="false" onAction="#BorrarDonante" text="Borrar" />
       <Button fx:id="btnEditardonante" layoutX="672.0" layoutY="209.0" mnemonicParsing="false" onAction="#EditararDonante" text="Editar" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="459.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btniraformulario" layoutX="587.0" layoutY="10.0" mnemonicParsing="false" onAction="#IraFormulario" prefHeight="17.0" prefWidth="156.0" text="IR A FORMULARIO!" />
    </children>
 </AnchorPane>
