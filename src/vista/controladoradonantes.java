@@ -1,9 +1,11 @@
 package vista;
 
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import com.itextpdf.text.DocumentException;
 
 import controlador.Mainsangre;
 import javafx.collections.FXCollections;
@@ -19,12 +21,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import modelo.ImprimeArchivo;
 import modelo.Testconexion;
 import modelo.donante;
 
 public class controladoradonantes {
 	@FXML
 	private Button btnVolverdonantes;
+	@FXML
+	private Button btn_imprime;
 	@FXML
 	private Button btnElminardonantes;
 	@FXML
@@ -280,6 +285,47 @@ public class controladoradonantes {
 		
 		
 		
+	}
+	public void imprime() throws FileNotFoundException, DocumentException{
+
+		
+				int index = tabla.getSelectionModel().getSelectedIndex();
+
+				if(index>=0){
+					
+					donante seleccionada = tabla.getSelectionModel().getSelectedItem();
+
+					
+							Alert alert = new Alert(AlertType.CONFIRMATION);
+					       alert.setTitle("Imprimiendo");
+					       alert.setHeaderText("Imprimiendo carnet de " + seleccionada.getNOMBRE() +" "+ seleccionada.getAPELLIDO1());
+					      
+					       Optional <ButtonType> result = alert.showAndWait ();
+					       
+					      if (result.get () == ButtonType.OK){
+					    	 
+					    	  ImprimeArchivo imprime = new ImprimeArchivo("archivo","C:\\Users\\pablo\\Desktop\\1DAW");
+					    	  imprime.generarArchivoPDF(seleccionada.getN_DONANTE(),seleccionada.getNOMBRE(),seleccionada.getAPELLIDO1(),seleccionada.getAPELLIDO2(),seleccionada.getCICLO());
+					    	   	Alert alerta = new Alert ( AlertType.INFORMATION ); 
+					    	   	alerta . setTitle ( "Información" ); 
+					    	   	alerta . setHeaderText (null); 
+					    	   	alerta . setContentText ( "¡SE HISO LA IMPRIMISION AMIGO!" );  
+					    	   	alerta . showAndWait (); 	
+					       }
+				}else{
+					
+						Alert alert = new Alert(AlertType.ERROR);
+				       alert.setTitle("Error !");
+				       alert.setHeaderText("no se ha podido imprimir");
+				       alert.showAndWait();
+				}
+				
+				
+				
+				
+				
+				
+
 	}
 }
 

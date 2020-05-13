@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -52,10 +53,14 @@
       <Label layoutX="374.0" layoutY="95.0" text="Sexo" />
       <Label layoutX="342.0" layoutY="148.0" text="Grupo_sanguineo" />
       <Label layoutX="374.0" layoutY="190.0" text="Ciclo" />
-      <Button fx:id="btnGuardardonante" layoutX="642.0" layoutY="112.0" mnemonicParsing="false" onAction="#GuardarDonante" text="Guardar Donante" />
-      <Button fx:id="btnBorrardonante" layoutX="642.0" layoutY="178.0" mnemonicParsing="false" onAction="#BorrarDatos" text="Borrar Datos" />
-      <Button fx:id="btnEditardonante" layoutX="642.0" layoutY="209.0" mnemonicParsing="false" onAction="#EditararDonante" text="Editar Donante" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="459.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btnElminardonantes" layoutX="642.0" layoutY="144.0" mnemonicParsing="false" onAction="#EliminarDonante" text="Eliminar Donante" />
+      <Button fx:id="btnGuardardonante" layoutX="626.0" layoutY="53.0" mnemonicParsing="false" onAction="#GuardarDonante" text="Guardar Donante" />
+      <Button fx:id="btnBorrardonante" layoutX="626.0" layoutY="125.0" mnemonicParsing="false" onAction="#BorrarDatos" text="Borrar Datos" />
+      <Button fx:id="btnEditardonante" layoutX="620.0" layoutY="165.0" mnemonicParsing="false" onAction="#EditararDonante" text="Editar Donante" />
+      <ImageView fitHeight="133.0" fitWidth="176.0" layoutX="447.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/fotoperfil.png" />
+         </image></ImageView>
+      <Button fx:id="btnElminardonantes" layoutX="626.0" layoutY="91.0" mnemonicParsing="false" onAction="#EliminarDonante" text="Eliminar Donante" />
+      <Button fx:id="btn_imprime" layoutX="490.0" layoutY="209.0" mnemonicParsing="false" onAction="#imprime" text="Imprimir Carnet Donante" />
    </children>
 </AnchorPane>
