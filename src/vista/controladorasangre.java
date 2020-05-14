@@ -36,12 +36,12 @@ public void cerrarventana() {
 public void setMnprincipal(Mainsangre mnprincipal) {
 	this.mnprincipal = mnprincipal;
 }
-public void iradonaciones() {
-System.out.println("donaciones");
+public void iradonaciones( ActionEvent Event) {
+	this.mnprincipal.irapantalladonacion();
 
 }
-public void irainformes() {
-System.out.println("informes");
+public void irainformes(ActionEvent Event) {
+	this.mnprincipal.irapantallainformes();
 
 }
 

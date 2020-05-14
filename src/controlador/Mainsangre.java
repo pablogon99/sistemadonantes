@@ -6,10 +6,13 @@ package controlador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import vista.controladoradonaciones;
 import vista.controladoradonantes;
+import vista.controladorafomulario;
+import vista.controladorainformes;
 import vista.controladorasangre;
 import javafx.scene.Scene;
-
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -60,6 +63,53 @@ public class Mainsangre extends Application {
 	            ventana.setScene(scene);
 
 	            controladoradonantes controller2 = loader.getController();
+	            controller2.setStagePrincipal(ventana);
+	            controller2.setmnprincipal(this);
+
+	            ventana.show();
+
+	        } catch (Exception e) {
+	            //tratar la excepción
+	        }
+	    }
+	public void irapantalladonacion () {
+		
+		 try {
+	            FXMLLoader loader = new FXMLLoader(Mainsangre.class.getResource("../vista/UIdonacion.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            /* Creamos la segunda ventana como otro stage */
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Venta Dos");
+	            /* Le decimos a la ventana quién es la ventana original */
+	            ventana.initOwner(primaryStage);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            controladoradonaciones controller2 = loader.getController();
+	            controller2.setStagePrincipal(ventana);
+	            controller2.setmnprincipal(this);
+
+	            ventana.show();
+
+	        } catch (Exception e) {
+	            //tratar la excepción
+	        }
+	    }
+	
+	public void irapantallainformes () {
+		
+		 try {
+	            FXMLLoader loader = new FXMLLoader(Mainsangre.class.getResource("../vista/UIinformes.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            /* Creamos la segunda ventana como otro stage */
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Venta Dos");
+	            /* Le decimos a la ventana quién es la ventana original */
+	            ventana.initOwner(primaryStage);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            controladorainformes controller2 = loader.getController();
 	            controller2.setStagePrincipal(ventana);
 	            controller2.setmnprincipal(this);
 

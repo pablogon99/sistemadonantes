@@ -27,6 +27,6 @@
       <Button fx:id="btnConsultaAnega" layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#ConsultaAnega" prefHeight="41.0" prefWidth="141.0" text="Grupo sanguineo A-" />
       <Button fx:id="btnConsultaCiclo" layoutX="456.0" layoutY="193.0" mnemonicParsing="false" onAction="#Consultaciclo" prefHeight="41.0" prefWidth="151.0" text="Alumnos de 1 DAW" />
       <Button fx:id="btnConsultaCero" layoutX="456.0" layoutY="94.0" mnemonicParsing="false" onAction="#Consultaceroposi" prefHeight="41.0" prefWidth="151.0" text="Grupo sanguineo 0+" />
-      <Button fx:id="btnVolverInformes" layoutX="26.0" layoutY="10.0" mnemonicParsing="false" onAction="#Volvermenu" text="Volver" />
+      <Button fx:id="btnVolverInformes" layoutX="26.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" text="Volver" />
    </children>
 </AnchorPane>

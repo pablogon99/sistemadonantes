@@ -1,9 +1,11 @@
 package vista;
 
+import controlador.Mainsangre;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 import modelo.donante;
 
 public class controladorainformes {
@@ -43,6 +45,20 @@ public class controladorainformes {
 	@FXML
 	private TableColumn<donante,String> colEmail;
 	
+	private Stage ventana;
+	private Mainsangre mnprincipal;
+	
+	
+	  public void setmnprincipal(Mainsangre mnprincipal) {
+			this.mnprincipal=mnprincipal;
+		}
+		public void setStagePrincipal(Stage ventana) {
+			// TODO Auto-generated method stub
+			this.ventana = ventana;
+		}
+		public void closeWindow(){
+			this.ventana.close();
+		}
 	
 	
 	public static void ConsultaAposi() {
