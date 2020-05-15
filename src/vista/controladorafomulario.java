@@ -116,6 +116,8 @@ public class controladorafomulario {
 
 	
 public void initialize () throws SQLException {
+	
+	con = new Testconexion();
 	sino.add(0,"SI");
 	sino.add(1, "NO");
 	sino.add(2, "----");
@@ -213,6 +215,9 @@ public void Guardardatos() throws SQLException{
 	
 	
 	
+
+
+
 
 public void Borrardatos() {
 	cb1.setValue("----");
