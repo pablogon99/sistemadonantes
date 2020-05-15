@@ -41,6 +41,6 @@
       <Label layoutX="465.0" layoutY="116.0" text="HB_VEN" />
       <Button fx:id="btnGuardardonacion" layoutX="439.0" layoutY="187.0" mnemonicParsing="false" onAction="#GuardarDonacion" text="Guardar datos" />
       <Button fx:id="btnBorrardonacion" layoutX="605.0" layoutY="187.0" mnemonicParsing="false" onAction="#BorrarDonacion" text="Borrar datos" />
-      <Button layoutX="587.0" layoutY="10.0" mnemonicParsing="false" text="IR A FORMULARIO!" />
+      <Button fx:id="btniraformulario" layoutX="587.0" layoutY="10.0" mnemonicParsing="false" onAction="#IrAFormulario" text="IR A FORMULARIO!" />
    </children>
 </AnchorPane>

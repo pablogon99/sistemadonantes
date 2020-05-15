@@ -1,0 +1,22 @@
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD / MM / AAAA' ; 
+
+INSERT INTO DONANTE VALUES ( 001 , '06603309D' , 'Pablo' , 'Gonzalez' , 'Martin' , 'pablogonzalezmartin99@gmail.com' , 'APTO' , 652692581 , 28320 , NULL,'HOMBRE' ) ; 
+INSERT INTO DONANTE VALUES ( 002 , '65897854D' , 'Alberto' , 'Sierra''Sanchez' , 'albertosierra@gmail.com' , 'APTO' , 658798456 , 28320 , NULL,'HOMBRE' ) ; 
+INSERT INTO DONANTE VALUES( 003 , '06652458D' , 'Daniel' , 'Horstrand' , 'Macias' , 'danielhorstrand@gmail.com' , 'APTO' , 916927720 , 28322 , NULL,'HOMBRE' ) ; 
+
+
+INSERT INTO FORMULARIO VALUES  ( 0001 , 'SI', 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI', 'NO' , 'SI', 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'NO' , 'NO' ,'NO','NO','NO','NO', '04/24/2020 ' ) ; 
+INSERT INTO FORMULARIO VALUES  ( 0002 , 'SI', 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI', 'NO' , 'SI', 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'NO' , 'NO' ,'NO','NO','NO','NO', '04/24/2020 ' ) ; 
+INSERT INTO FORMULARIO VALUES  ( 0003 , 'SI', 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI', 'NO' , 'SI', 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'SI' , 'NO' , 'SI' ,'NO' , 'NO' , 'NO' ,'NO','NO','NO','NO', '04/24/2020 ' ) ; ​
+INSERT INTO RELLENA VALUES  ( 0001 , 001 ) ; 
+INSERT INTO RELLENA VALUES ( 0002 , 002 ) ; 
+INSERT INTO RELLENA VALUES( 0003 , 003 ) ; 
+
+
+INSERT INTO DONACION VALUES ( 1 , '24 / 04/2020 ' , ' SANGRE ' ,'100' , '5' , '10' , '15' , '10' ) ; 
+INSERT INTO DONACION VALUES( 2 , '24 / 04/2020 ' , ' SANGRE ' , ' 98 ' , ' 15 ' , ' 12 ' , ' 16 ' , ' 11 ' ) ; 
+INSERT INTO DONACION VALUES ( 3 , '24 / 04/2020 ' , ' SANGRE ' , ' 85 ' , ' 25 ' ,'12' ) ; 
+
+INSERT INTO REALIZA VALUES ( 1 , 001 ) ; 
+INSERT INTO REALIZA VALUES ( 2 , 002 ) ; 
+INSERT INTO REALIZA VALUES  ( 3 , 003 ) ;​

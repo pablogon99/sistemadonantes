@@ -98,26 +98,7 @@ public class Mainsangre extends Application {
 	
 	public void irapantallainformes () {
 		
-		 try {
-	            FXMLLoader loader = new FXMLLoader(Mainsangre.class.getResource("../vista/UIinformes.fxml"));
-	            AnchorPane ventanaDos = (AnchorPane) loader.load();
-	            /* Creamos la segunda ventana como otro stage */
-	            Stage ventana = new Stage();
-	            ventana.setTitle("Venta Dos");
-	            /* Le decimos a la ventana quién es la ventana original */
-	            ventana.initOwner(primaryStage);
-	            Scene scene = new Scene(ventanaDos);
-	            ventana.setScene(scene);
-
-	            controladorainformes controller2 = loader.getController();
-	            controller2.setStagePrincipal(ventana);
-	            controller2.setmnprincipal(this);
-
-	            ventana.show();
-
-	        } catch (Exception e) {
-	            //tratar la excepción
-	        }
-	    }
+		
 	}
+}
 

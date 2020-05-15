@@ -267,7 +267,7 @@ public void GuardarDonaciones(int nUM_DONACION, String fECHA, String tIPO_DONACI
 Statement stm = conexion.createStatement();
 	
 	
-	String insertsql = "INSERT INTO "+user+".DONACION (NUM_DONACION,FECHA,TIPO_DONACION,PULSO,TA_SIST,TA_DIAS,HB_CAP,HB_VEN) VALUES (?,?,?,?,?,?,?,?)";
+	String insertsql = "INSERT INTO "+user+".DONACION VALUES (?,?,?,?,?,?,?,?)";
 	PreparedStatement pstmt = conexion.prepareStatement(insertsql);
 	pstmt.setInt(1, nUM_DONACION);
 	pstmt.setString(2, fECHA);
@@ -337,6 +337,82 @@ String updatesql = "UPDATE "+user+".DONACION SET NUM_DONACION= ?, FECHA =?, TIPO
 		System.out.println("Ha habido algún problema con  Oracle al hacer la modificacion");
 }
 
+}
+
+public void GuardarFormulario(Integer codigo_form, String pregunta1, String pregunta2, String pregunta3, String pregunta4,
+		String pregunta5, String pregunta6, String pregunta7, String pregunta8, String pregunta9, String pregunta10,
+		String pregunta11, String pregunta12, String pregunta13, String pregunta14, String pregunta15,
+		String pregunta16, String pregunta17, String pregunta18, String pregunta19, String pregunta20,
+		String pregunta21, String pregunta22, String pregunta23, String pregunta24, String pregunta25,
+		String pregunta26, String pregunta27, String pregunta28, String pregunta29, String pregunta30,
+		String pregunta31, String pregunta32, String preguntaex1, String preguntaex2, String preguntaex3,
+		String fecha_form) throws SQLException {
+
+	
+	
+	String insertsql = "INSERT INTO "+user+".FORMULARIO  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	PreparedStatement pstmt = conexion.prepareStatement(insertsql);
+	
+	pstmt.setInt(1,codigo_form);
+	pstmt.setString(2,pregunta1 );
+	pstmt.setString(3,pregunta2 );
+	pstmt.setString(4,pregunta3 );
+	pstmt.setString(5,pregunta4 );
+	pstmt.setString(6,pregunta5 );
+	pstmt.setString(7,pregunta6);
+	pstmt.setString(8,pregunta7 );
+	pstmt.setString(9,pregunta8);
+	pstmt.setString(10,pregunta9);
+	pstmt.setString(11,pregunta10 );
+	pstmt.setString(12, pregunta11);
+	pstmt.setString(13,pregunta12 );
+	pstmt.setString(14,pregunta13 );
+	pstmt.setString(15,pregunta14 );
+	pstmt.setString(16, pregunta15);
+	pstmt.setString(17,pregunta16 );
+	pstmt.setString(18,pregunta17 );
+	pstmt.setString(19,pregunta18 );
+	pstmt.setString(20,pregunta19 );
+	pstmt.setString(21,pregunta20 );
+	pstmt.setString(22,pregunta21 );
+	pstmt.setString(23,pregunta22 );
+	pstmt.setString(24,pregunta23);
+	pstmt.setString(25,pregunta24);
+	pstmt.setString(26,pregunta25 );
+	pstmt.setString(27,pregunta26);
+	pstmt.setString(28,pregunta27 );
+	pstmt.setString(29,pregunta28 );
+	pstmt.setString(30,pregunta29 );
+	pstmt.setString(31,pregunta30 );
+	pstmt.setString(32,pregunta31);
+	pstmt.setString(33,pregunta32);
+	pstmt.setString(34,preguntaex1 );
+	pstmt.setString(35,preguntaex2);
+	pstmt.setString(36,preguntaex3 );
+	pstmt.setString(37,fecha_form);
+
+	
+	try {
+		int resultado = pstmt.executeUpdate();
+
+		if(resultado != 1) {
+			System.out.println("Error en la inserción " + resultado);
+		}
+
+	
+	} catch (SQLException sqle ) {
+		
+	
+		int pos = sqle.getMessage().indexOf(":");
+		String codeErrorSQL = sqle.getMessage().substring(0,pos);
+
+		if(codeErrorSQL.equals("ORA-00955") )
+			System.out.println("LA TABLA ESTA CREADA ");
+		else
+			System.out.println("Ha habido algún problema con  Oracle al hacer la insercion de datos");
+	}
+	
+	
 }
 }
 

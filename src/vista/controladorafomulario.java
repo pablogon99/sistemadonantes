@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import modelo.Testconexion;
-import modelo.donaciones;
 import modelo.formulario;
 
 public class controladorafomulario {
@@ -25,7 +24,9 @@ public class controladorafomulario {
 	@FXML
 	private Button BorrarCambios;
 	@FXML
-	private TextField Num_formulario;
+	private TextField fechatxt;
+	@FXML
+	private TextField Num_formulariotxt;
 	@FXML
 	private ChoiceBox <String> cb1;
 	@FXML
@@ -102,19 +103,13 @@ public class controladorafomulario {
 	
 	private ObservableList<String> sino =FXCollections.observableArrayList();
 	Testconexion con;
-	private ObservableList<donaciones> datos1 = FXCollections.observableArrayList();
-	private ObservableList<donaciones> datos2 = FXCollections.observableArrayList();
+	private ObservableList<formulario> datos1 = FXCollections.observableArrayList();
+	private ObservableList<formulario> datos2 = FXCollections.observableArrayList();
 	private Stage ventana;
 	private Mainsangre mnprincipal;
 	
 	
-	  public void setmnprincipal(Mainsangre mnprincipal) {
-			this.mnprincipal=mnprincipal;
-		}
-		public void setStagePrincipal(Stage ventana) {
-			// TODO Auto-generated method stub
-			this.ventana = ventana;
-		}
+	 
 		public void closeWindow(){
 			this.ventana.close();
 		}
@@ -166,16 +161,59 @@ public void initialize () throws SQLException {
 	indiceEdicion = 0;
 }
 public void Guardardatos() throws SQLException{
-	if(cb1.getValue().contains("NO") || cb3.getValue().contains("NO") || cb12.getValue().contains("SI")|| cb14.getValue().contains("SI")|| cb16.getValue().contains("SI")|| cb17.getValue().contains("SI") ){	
+	if(cb1.getSelectionModel().getSelectedItem().equals("NO") || cb3.getSelectionModel().getSelectedItem().equals("NO") || cb12.getSelectionModel().getSelectedItem().equals("SI") || cb14.getSelectionModel().getSelectedItem().equals("SI") || cb16.getSelectionModel().getSelectedItem().equals("SI") || cb17.getSelectionModel().getSelectedItem().equals("SI")  ){	
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Error!!!");
 		alert.setHeaderText("CON LOS CAMPOS INTRODUCIDOS SERIAS NO APTO");
 		alert.setContentText("SE GUARDARAN LOS DATOS NO APTO!");
 		alert.showAndWait();
 	}
+	if(Num_formulariotxt.getText().equals("")||cb1.getSelectionModel().getSelectedItem().equals("")  || cb2.getSelectionModel().getSelectedItem().equals("")  ||cb3.getSelectionModel().getSelectedItem().equals("")|| cb4.getSelectionModel().getSelectedItem().equals("") ||cb5.getSelectionModel().getSelectedItem().equals("") ||cb6.getSelectionModel().getSelectedItem().equals("") ||cb7.getSelectionModel().getSelectedItem().equals("") ||cb8.getSelectionModel().getSelectedItem().equals("") ||cb9.getSelectionModel().getSelectedItem().equals("") ||cb10.getValue().contains("") ||cb11.getSelectionModel().getSelectedItem().equals("") ||cb12.getSelectionModel().getSelectedItem().equals("") 
+			|| cb13.getSelectionModel().getSelectedItem().equals("")|| cb14.getSelectionModel().getSelectedItem().equals("")|| cb15.getSelectionModel().getSelectedItem().equals("")|| cb16.getSelectionModel().getSelectedItem().equals("")|| cb17.getSelectionModel().getSelectedItem().equals("") || cb18.getSelectionModel().getSelectedItem().equals("") ||
+			 cb19.getSelectionModel().getSelectedItem().equals("") || cb20.getSelectionModel().getSelectedItem().equals("") || cb21.getSelectionModel().getSelectedItem().equals("") || cb22.getSelectionModel().getSelectedItem().equals("") || cb23.getSelectionModel().getSelectedItem().equals("") || cb24.getSelectionModel().getSelectedItem().equals("") || cb25.getSelectionModel().getSelectedItem().equals("") ||
+			 cb26.getSelectionModel().getSelectedItem().equals("") || cb27.getSelectionModel().getSelectedItem().equals("")|| cb28.getSelectionModel().getSelectedItem().equals("") || cb29.getSelectionModel().getSelectedItem().equals("") || cb30.getSelectionModel().getSelectedItem().equals("") || cb31.getSelectionModel().getSelectedItem().equals("") ||
+			 cb32.getSelectionModel().getSelectedItem().equals("") || cb33.getSelectionModel().getSelectedItem().equals("") || cb34.getSelectionModel().getSelectedItem().equals("") || cb35.getSelectionModel().getSelectedItem().equals("")||fechatxt.getText().contains("")){	
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Error!!!");
+		alert.setHeaderText("HAS RELLENADO TODOS LOS CAMPOS");
+		alert.setContentText("Hacemos insercion");
+		alert.showAndWait();
+		
+		formulario nuevoFormulario = new formulario(Integer.parseInt(Num_formulariotxt.getText()),cb1.getValue(),cb2.getValue(),cb3.getValue(),cb4.getValue(),cb5.getValue()
+				,cb6.getValue(),cb7.getValue(),cb8.getValue(),cb9.getValue(),cb10.getValue(),cb11.getValue(),cb12.getValue(),cb13.getValue(),cb14.getValue()
+				,cb15.getValue(),cb16.getValue(),cb17.getValue(),cb18.getValue(),cb19.getValue(),cb20.getValue(),cb21.getValue(),cb22.getValue(),cb23.getValue()
+				,cb24.getValue(),cb25.getValue(),cb26.getValue(),cb27.getValue(),cb28.getValue(),cb29.getValue(),cb30.getValue(),cb31.getValue(),cb32.getValue()
+				,cb33.getValue(),cb34.getValue(),cb35.getValue(),fechatxt.getText());
+		datos1.add(nuevoFormulario);
+		
+		
+			con.GuardarFormulario(Integer.parseInt(Num_formulariotxt.getText()),cb1.getSelectionModel().getSelectedItem().toString(),cb2.getSelectionModel().getSelectedItem().toString(),cb3.getSelectionModel().getSelectedItem().toString(),cb4.getSelectionModel().getSelectedItem().toString(),cb5.getSelectionModel().getSelectedItem().toString()
+					,cb6.getSelectionModel().getSelectedItem().toString(),cb7.getSelectionModel().getSelectedItem().toString(),cb8.getSelectionModel().getSelectedItem().toString(),cb9.getSelectionModel().getSelectedItem().toString(),cb10.getSelectionModel().getSelectedItem().toString(),cb11.getSelectionModel().getSelectedItem().toString(),cb12.getSelectionModel().getSelectedItem().toString(),cb13.getSelectionModel().getSelectedItem().toString(),cb14.getSelectionModel().getSelectedItem().toString()
+					,cb15.getSelectionModel().getSelectedItem().toString(),cb16.getSelectionModel().getSelectedItem().toString(),cb17.getSelectionModel().getSelectedItem().toString(),cb18.getSelectionModel().getSelectedItem().toString(),cb19.getSelectionModel().getSelectedItem().toString(),cb20.getSelectionModel().getSelectedItem().toString(),cb21.getSelectionModel().getSelectedItem().toString(),cb22.getSelectionModel().getSelectedItem().toString(),cb23.getSelectionModel().getSelectedItem().toString()
+					,cb24.getSelectionModel().getSelectedItem().toString(),cb25.getSelectionModel().getSelectedItem().toString(),cb26.getSelectionModel().getSelectedItem().toString(),cb27.getSelectionModel().getSelectedItem().toString(),cb28.getSelectionModel().getSelectedItem().toString(),cb29.getSelectionModel().getSelectedItem().toString(),cb30.getSelectionModel().getSelectedItem().toString(),cb31.getValue().toString(),cb32.getSelectionModel().getSelectedItem().toString()
+					,cb33.getSelectionModel().getSelectedItem().toString(),cb34.getSelectionModel().getSelectedItem().toString(),cb35.getSelectionModel().getSelectedItem().toString(),fechatxt.getText());
+			Alert alerta = new Alert ( AlertType.INFORMATION ); 
+		   	alerta . setTitle ( "Información " ); 
+		   	alerta . setHeaderText (null); 
+		   	alerta . setContentText ("¡FORMULARIO GUARDADO!");  
+		   	alerta . showAndWait();
+	}else {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Error!!!");
+		alert.setHeaderText("NO HAS RELLENADO TODOS LOS CAMPOS");
+		alert.setContentText("RELLENALOS");
+		alert.showAndWait();
+	}
+		
+		}
+	
+	
 
 	
-}
+	
+	
+	
+
 public void Borrardatos() {
 	cb1.setValue("----");
 	cb2.setValue("----");

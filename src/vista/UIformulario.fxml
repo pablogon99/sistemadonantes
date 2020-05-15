@@ -56,8 +56,8 @@
             <Button fx:id="BorrarCambios" layoutX="450.0" layoutY="1636.0" mnemonicParsing="false" onAction="#Borrardatos" prefHeight="32.0" prefWidth="158.0" text="Borrar datos" />
             <Button fx:id="Volver" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeWindow" text="Volver" />
             <Label layoutX="329.0" layoutY="18.0" text="FORMULARIO" />
-            <TextField fx:id="Num_formulario" layoutX="442.0" layoutY="1560.0" />
-            <Label layoutX="252.0" layoutY="1564.0" text="Introduce numero de formulario" />
+            <TextField fx:id="Num_formulariotxt" layoutX="215.0" layoutY="1560.0" />
+            <Label layoutX="28.0" layoutY="1564.0" text="Introduce numero de formulario" />
             <ChoiceBox fx:id="cb2" layoutX="701.0" layoutY="84.0" prefHeight="20.0" prefWidth="58.0" />
             <ChoiceBox fx:id="cb3" layoutX="701.0" layoutY="117.0" prefHeight="20.0" prefWidth="58.0" />
             <ChoiceBox fx:id="cb4" layoutX="701.0" layoutY="145.0" prefHeight="20.0" prefWidth="58.0" />
@@ -92,6 +92,8 @@
             <ChoiceBox fx:id="cb33" layoutX="701.0" layoutY="1407.0" prefHeight="20.0" prefWidth="58.0" />
             <ChoiceBox fx:id="cb34" layoutX="701.0" layoutY="1452.0" prefHeight="20.0" prefWidth="58.0" />
             <ChoiceBox fx:id="cb35" layoutX="701.0" layoutY="1493.0" prefHeight="20.0" prefWidth="58.0" />
+            <Label layoutX="454.0" layoutY="1564.0" text="Fecha formulario" />
+            <TextField fx:id="fechatxt" layoutX="590.0" layoutY="1560.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

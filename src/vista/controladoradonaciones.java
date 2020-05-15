@@ -6,6 +6,9 @@ import controlador.Mainsangre;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -19,7 +22,8 @@ import modelo.donaciones;
 
 
 public class controladoradonaciones {
-
+	@FXML
+	private Button btniraformulario;
 	@FXML
 	private Button btnGuardardonacion;
 	@FXML
@@ -175,6 +179,21 @@ public void initialize() throws SQLException{
 		indiceEdicion = 0;
 	}
 	
-}
+	public void IrAFormulario() {
+		try{   
+			FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("UIformulario.fxml"));         
+			Parent root1= (Parent)fxmlLoader.load();                          
+			//Creo un Stage, que es como una ventana vacia           
+			Stage stage= new Stage();                          
+			//Y ahora dentro del Stage meto la vista de informes  
+			stage.setScene(new Scene(root1));                         
+			// Y ahora le digo que me muestre el stage            
+			stage.show();                     
+			}catch(Exception e) {          
+				e.printStackTrace();         }
+		}
+
+	}
+
 
 

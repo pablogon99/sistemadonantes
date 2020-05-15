@@ -10,6 +10,8 @@ public class donaciones {
  private String HB_CAP;
  private String HB_VEN;
  
+
+
 public donaciones(int nUM_DONACION, String fECHA, String tIPO_DONACION, String pULSO, String tA_SIST, String tA_DIAS,
 		String hB_CAP, String hB_VEN) {
 	super();

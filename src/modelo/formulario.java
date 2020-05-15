@@ -3,7 +3,7 @@ package modelo;
 public class formulario {
 
 	
-	private String Codigo_form;
+	private Integer Codigo_form;
 	private String Pregunta1;
 	private String Pregunta2;
 	private String Pregunta3;
@@ -40,7 +40,7 @@ public class formulario {
 	private String Preguntaex2;
 	private String Preguntaex3;
 	private String Fecha_form;
-	public formulario(String codigo_form, String pregunta1, String pregunta2, String pregunta3, String pregunta4,
+	public formulario(Integer codigo_form, String pregunta1, String pregunta2, String pregunta3, String pregunta4,
 			String pregunta5, String pregunta6, String pregunta7, String pregunta8, String pregunta9, String pregunta10,
 			String pregunta11, String pregunta12, String pregunta13, String pregunta14, String pregunta15,
 			String pregunta16, String pregunta17, String pregunta18, String pregunta19, String pregunta20,
@@ -87,10 +87,10 @@ public class formulario {
 		Preguntaex3 = preguntaex3;
 		Fecha_form = fecha_form;
 	}
-	public String getCodigo_form() {
+	public Integer getCodigo_form() {
 		return Codigo_form;
 	}
-	public void setCodigo_form(String codigo_form) {
+	public void setCodigo_form(Integer codigo_form) {
 		Codigo_form = codigo_form;
 	}
 	public String getPregunta1() {
